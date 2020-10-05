@@ -1,0 +1,22 @@
+<p>angular-captcha-demo works!</p>
+<form novalidate #f="ngForm" (ngSubmit)="validate()">
+
+  <div class="alert alert-success" *ngIf="successMessages">
+    {{ successMessages }}
+  </div>
+
+  <div class="alert alert-error" *ngIf="errorMessages">
+    {{ errorMessages }}
+  </div>
+
+  <!-- captcha challenge: placeholder -->
+  <botdetect-captcha captchaStyleName="yourFirstCaptchaStyle"></botdetect-captcha>
+
+  <label>
+    <span>Retype the characters from the picture:</span>
+    <!-- captcha code: user-input textbox -->
+    <input type="text" id="yourFirstCaptchaUserInput" name="yourFirstCaptchaUserInput" ngModel #yourFirstCaptchaUserInput="ngModel">
+  </label>
+
+  <button type="submit">Validate</button>
+</form>
